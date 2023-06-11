@@ -1,0 +1,22 @@
+﻿@model DepremTirProjesi.Models.Kategori
+@{
+    ViewData["Title"] = "KategoriEkle";
+    Layout = "~/Views/Shared/_ProjeLayout.cshtml";
+}
+
+<h1>KategoriEkle</h1>
+
+<br/>
+
+@using (Html.BeginForm("KategoriEkle", "Kategori", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.KategoriAd)
+    @Html.TextBoxFor(x=>x.KategoriAd, new{@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.KategoriAciklama)
+    @Html.TextBoxFor(x=>x.KategoriAciklama, new{@class="form-control"})
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+}
+

@@ -1,0 +1,24 @@
+﻿@model DepremTirProjesi.Models.Malzeme
+
+@{
+    ViewData["Title"] = "MalzemeEkle";
+    Layout = "~/Views/Shared/_ProjeLayout.cshtml";
+}
+
+<h1>MalzemeEkle</h1>
+<br />
+
+@using (Html.BeginForm("MalzemeEkle", "Malzeme", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.MalzemeAd)
+    @Html.TextBoxFor(x=>x.MalzemeAd, new{@class="form-control"})
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x=>x.KategoriId,(List<SelectListItem>)ViewBag.v1,new {@class = "form-control"})
+    @Html.LabelFor(x=>x.MalzemeStok)
+    @Html.TextBoxFor(x=>x.MalzemeStok, new{@class="form-control"})
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+}

@@ -1,0 +1,33 @@
+﻿@model List<DepremTirProjesi.Models.TirİcerikBilgisi>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ProjeLayout.cshtml";
+}
+<h1> Tir İcerik Bilgisi Listesi</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Tır Plaka</th>
+        <th>Sehir</th>
+        <th>Ilces</th>
+        <th>Malzeme</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.TirId</td>
+            <td>@x.TirPlaka</td>
+            <td>@x.SehirId</td>
+            <td>@x.IlceId</td>
+            <td>@x.MalzemeId</td>
+
+            <td><a href="/TirİcerikBilgisi/TirİcerikBilgisiSil/@x.TirId" class="btn btn-danger">Delete</a></td>
+            <td><a href="/TirİcerikBilgisi/TirİcerikBilgisiGet/@x.TirId/" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/TirİcerikBilgisi/TirİcerikBilgisiEkle/" class="btn btn-primary">Tir İcerik Bilgisi Ekle</a>
+
